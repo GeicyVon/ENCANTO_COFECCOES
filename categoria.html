@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Produtos por categoria da Encanto confecções">
+  <title>Categoria | Encanto confecções</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <div class="topbar">
+      <a class="brand" href="index.html#inicio" aria-label="Encanto confecções, início"><img class="brand-logo" src="imagens/encanto-confecoes-3.png" alt="Encanto Confecções"></a>
+      <div class="header-actions">
+        <a class="button button-light category-back" href="index.html#inicio">Voltar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="category-page">
+    <section class="category-page-header section-wrap">
+      <p class="eyebrow">Categoria</p>
+      <h1 id="titulo-categoria">Produtos</h1>
+      <p id="descricao-categoria">Confira os produtos disponíveis nesta categoria.</p>
+    </section>
+
+    <section class="section-wrap category-page-list" aria-live="polite">
+      <div id="category-products" class="product-grid category-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contato">
+    <div class="footer-main section-wrap">
+      <div>
+        <a class="brand brand-footer" href="index.html#inicio"><img class="brand-logo" src="imagens/logo-rodape.png" alt="Encanto Confecções"></a>
+        <p>Encanto confecções encantando seu dia</p>
+      </div>
+      <div class="footer-column">
+        <h2>Visite</h2>
+        <p>Av Ângelo Takaki 2425<br>Paranapuã - SP</p>
+        <p>Seg a Sáb das 08h30 às 18h00.</p>
+      </div>
+      <div class="footer-column">
+        <h2>Fale com a gente</h2>
+        <a class="contact-button" href="mailto:[A DEFINIR]">E-mail <span aria-hidden="true">↗</span></a>
+        <a class="contact-button" href="https://wa.me/5517997135762?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Encanto%20Confec%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+        <a class="social-button" href="https://www.instagram.com/encanto_confeccoes?igsi=Nm16MHcxdmR4eHho" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-column" id="duvidas">
+        <h2>Ajuda</h2>
+        <p><a href="#duvidas">FAQ / dúvidas frequentes</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom section-wrap"><span>© encanto confecções</span></div>
+  </footer>
+
+  <script>
+    const catalog = [
+      { category: 'Babadores', size: 'Único', name: 'Babadores', price: 'R$ 29,90', color: 'photo-coral', image: 'imagens/enxoval/babadores/47008-dig399.webp' },
+      { category: 'Cobertor', size: '90 cm X 110 cm', name: 'Cobertor', price: 'R$ 39,90', color: 'photo-yellow', image: 'imagens/enxoval/cobertor/captura-de-tela-2026-09-16-203209.png' },
+      { category: 'Cueiros', size: '1 - 3', name: 'Cueiros', price: 'R$ 15,99', color: 'photo-blue', image: 'imagens/enxoval/cueiro/captura-de-tela-2026-09-16-203358.png' },
+      { category: 'Fraldas', size: '80 cm X 80 cm', name: 'Fralda ombro', price: 'R$ 24,99 cada', color: 'photo-coral', image: 'imagens/enxoval/fraldas/reduzidolaleblu-28-maio25-107.jpg' },
+      { category: 'Lençois', size: '10 - 14', name: 'Lençois', price: 'R$ 24,99 cada', color: 'photo-yellow', image: 'imagens/enxoval/lencois/jogo-de-lencol-para-berco-3-pecas-alice-bege-percal-rosa-180-fios-64751b54f0345-large.jpg' },
+      { category: 'Pano de boca', size: '16 - 18', name: 'Pano de boca', price: 'R$ 14,99 cada', color: 'photo-blue', image: 'imagens/enxoval/pano-de-boca/image.jpg' },
+      { category: 'Toalhas de banho', size: 'Recém nascido', name: 'Toalhas de banho', price: 'R$ 34,99', color: 'photo-coral', image: 'imagens/enxoval/toalha-de-banho/captura-de-tela-2026-09-16-204511.png' },
+      { category: 'Travesseiros', size: '29 cm X 19 cm X 3 cm', name: 'Travesseiros', price: 'R$ 10,50', color: 'photo-yellow', image: 'imagens/enxoval/travesseiro/captura-de-tela-2026-09-16-204613.png' },
+      { category: 'Blusas de frio', audience: 'bebe-menino', size: '1 - 3', name: 'Blusas de frio', price: 'R$ [A DEFINIR]', color: 'photo-coral', image: 'imagens/bebe-menina/blusa-de-frio/46703-000106-1.webp', boyImage: 'imagens/bebe-menino/blusa-de-frio/46740-161336-1.webp', girlsImage: 'imagens/meninas/blusa-de-frio/56448-1211-0002.webp', meninosImage: 'imagens/meninos/blusa-de-frio/56356-1163-0002.webp' },
+      { category: 'Body de calor', audience: 'bebe-menino', size: '4 - 8', name: 'Body de calor', price: 'R$ [A DEFINIR]', color: 'photo-blue', image: 'imagens/bebe-menina/body-de-calor/47020-ab2554.webp', boyImage: 'imagens/bebe-menino/body-de-calor/47071-193921.webp' },
+      { category: 'Body de frio', audience: 'bebe-menino', size: '10 - 14', name: 'Body de frio', price: 'R$ [A DEFINIR]', color: 'photo-yellow', image: 'imagens/bebe-menina/body-de-frio/47022-xad064.webp', boyImage: 'imagens/bebe-menino/body-de-frio/46738-180426.webp' },
+      { category: 'Calças', audience: 'bebe-menino', size: '16 - 18', name: 'Calças', price: 'R$ [A DEFINIR]', color: 'photo-coral', image: 'imagens/bebe-menina/calcas/foto-0.webp', boyImage: 'imagens/bebe-menino/calcas/foto-0.webp', girlsImage: 'imagens/meninas/calcas/80177-0028-0005.webp', meninosImage: 'imagens/meninos/calcas/80179-2600-0005.webp' },
+      { category: 'Camisetas', audience: 'bebe-menino', size: 'Recém nascido', name: 'Camisetas', price: 'R$ [A DEFINIR]', color: 'photo-blue', image: 'imagens/bebe-menina/camisetas/3.webp', boyImage: 'imagens/bebe-menino/camisetas/3.webp', girlsImage: 'imagens/meninas/camisetas/37025-0855-0005.webp', meninosImage: 'imagens/meninos/camisetas/27566-0573-0002.webp' },
+      { category: 'Macacões de calor', audience: 'bebe-menino', size: 'P, M, G', name: 'Macacões de calor', price: 'R$ [A DEFINIR]', color: 'photo-yellow', image: 'imagens/bebe-menina/macacoes-de-calor/46970-191763-1.webp', boyImage: 'imagens/bebe-menino/macacoes-de-calor/47015-dig398-1.webp' },
+      { category: 'Macacões de frio', audience: 'bebe-menina', size: '1 - 3', name: 'Macacões de frio', price: 'R$ [A DEFINIR]', color: 'photo-coral', image: 'imagens/bebe-menina/macacoes-de-frio/46834-191763.webp' },
+      { category: 'Mijão', audience: 'bebe-menino', size: '4 - 8', name: 'Mijão', price: 'R$ [A DEFINIR]', color: 'photo-blue', image: 'imagens/bebe-menina/mijao/46780-ab2423-1.webp', boyImage: 'imagens/bebe-menino/mijao/46487-ab2377.webp' },
+      { category: 'Short tapa fralda', audience: 'bebe-menino', size: '10 - 14', name: 'Short tapa fralda', price: 'R$ [A DEFINIR]', color: 'photo-yellow', image: 'imagens/bebe-menina/short-tapa-fralda/46477-ab2380.webp', boyImage: 'imagens/bebe-menino/short-tapa-fralda/47069-185841.webp' },
+      { category: 'Blusas de frio', audience: 'bebe-menina', size: 'P, M, G, 1, 2, 3', name: 'Blusão Infantil Em Tricot Com Bordado Off White', price: 'R$ 149,94', color: 'photo-coral', image: 'imagens/bebe-menina/blusa-de-frio/46703-000106-1.webp' },
+      { category: 'Body de calor', audience: 'bebe-menina', size: 'RN, P, M, G, GG', name: 'Body Essentials Manga Curta em Suedine Bebê Menina (Off White)', price: 'R$ 64,90', color: 'photo-blue', image: 'imagens/bebe-menina/body-de-calor/47020-ab2554.webp' },
+      { category: 'Body de frio', audience: 'bebe-menina', size: 'RN, P, M, G, GG', name: 'Body Manga Essentials Longa em Suedine Bebê Menina (Rosa Claro)', price: 'R$ 69,90', color: 'photo-yellow', image: 'imagens/bebe-menina/body-de-frio/47022-xad064.webp' },
+      { category: 'Calças', audience: 'bebe-menina', size: 'P, M, G, 1, 2, 3', name: 'Calça reta infantil jeans com bordado floral preta', price: 'R$ 109,90', color: 'photo-coral', image: 'imagens/bebe-menina/calcas/foto-0.webp' },
+      { category: 'Camisetas', audience: 'bebe-menina', size: 'P, M, G, GG', name: 'Camiseta Infantil Estampa Frozen com Asas', price: 'R$ 89,90', color: 'photo-blue', image: 'imagens/bebe-menina/camisetas/3.webp' },
+      { category: 'Macacões de calor', audience: 'bebe-menina', size: 'RN, P, M, G', name: 'Macaquinho para Bebê em Algodão Vichy com Bordado (Vermelho)', price: 'R$ 224,90', color: 'photo-yellow', image: 'imagens/bebe-menina/macacoes-de-calor/46970-191763-1.webp' },
+      { category: 'Macacões de calor', audience: 'bebe-menina', size: 'RN, P, M, G', name: 'Macacão Essentials Bebê Em Suedine Premium Vermelho', price: 'R$ 74,90', color: 'photo-yellow', image: 'imagens/bebe-menina/macacoes-de-calor/46970-191763-1.webp' },
+      { category: 'Mijão', audience: 'bebe-menina', size: 'RN, P, M, G', name: 'Calça Bebê Menina Em Suedine Com Pés Reversíveis Multicolor Up Baby', price: 'R$ 39,90', color: 'photo-blue', image: 'imagens/bebe-menina/mijao/46780-ab2423-1.webp' },
+      { category: 'Short tapa fralda', audience: 'bebe-menina', size: 'RN, P, M, G', name: 'Short em Suedine Essentials para Bebê Menina Branco', price: 'R$ 39,90', color: 'photo-yellow', image: 'imagens/bebe-menina/short-tapa-fralda/46477-ab2380.webp' },
+      { category: 'Blusas de frio', audience: 'meninas', size: '10 - 18', name: 'Blusão polo teen menina em moletinho', price: 'R$ 69,90', color: 'photo-coral', image: 'imagens/meninas/blusa-de-frio/blusao-polo-teen.jpeg' },
+      { category: 'Calças', audience: 'meninas', size: '1 - 18', name: 'Calça infantil', price: 'R$ 59,90', color: 'photo-coral', image: 'imagens/meninas/calcas/calca-infantil-moletom.png' },
+      { category: 'Camisetas', audience: 'meninas', size: '4 - 10', name: 'Blusa infantil menina com estampa de flor', price: 'R$ 49,90', color: 'photo-coral', image: 'imagens/meninas/blusa-de-frio/blusa-estampa-flor.png' },
+      { category: 'Conjuntos de calor', audience: 'meninas', size: '4 - 10', name: 'Conjunto infantil menina metalizado', price: 'R$ 119,90', color: 'photo-yellow', image: 'imagens/meninas/conjuntos-de-calor/conjunto-metalizado.png' },
+      { category: 'Conjuntos de frio', audience: 'meninas', size: '4 - 16', name: 'Conjunto infantil menina em moletom de coração', price: 'R$ 124,90', color: 'photo-yellow', image: 'imagens/meninas/conjuntos-de-frio/conjunto-moletom-coracao.png' },
+      { category: 'Shorts', audience: 'meninas', size: '4 - 10', name: 'Shorts infantil menina em moletinho com estampa de fruta', price: 'R$ 39,90', color: 'photo-coral', image: 'imagens/meninas/shorts/short-moletinho-fruta.png' },
+      { category: 'Blusas de frio', audience: 'meninos', size: '4 - 16', name: 'Blusão infantil menino em moletom', price: 'R$ 99,99', color: 'photo-blue', image: 'imagens/meninos/blusa-de-frio/blusao-moletom.png' },
+      { category: 'Calças', audience: 'meninos', size: 'P, M, G, 1 - 18', name: 'Calça jogger infantil menino em moletinho', price: 'R$ 62,99', color: 'photo-blue', image: 'imagens/meninos/calcas/calca-jogger.png' },
+      { category: 'Camisetas', audience: 'meninos', size: '4 - 10', name: 'Camiseta infantil menino em meia malha Os Vingadores', price: 'R$ 79,99', color: 'photo-blue', image: 'imagens/meninos/camisetas/camiseta-vingadores.png' },
+      { category: 'Conjuntos de calor', audience: 'meninos', size: '4 - 16', name: 'Conjunto infantil menino de skate em puff', price: 'R$ 95,99', color: 'photo-blue', image: 'imagens/meninos/conjuntos-de-calor/conjunto-skate.png' },
+      { category: 'Conjuntos de frio', audience: 'meninos', size: '4 - 16', name: 'Conjunto infantil menino em moletom', price: 'R$ 94,99', color: 'photo-blue', image: 'imagens/meninos/conjuntos-de-frio/conjunto-moletom.png' },
+      { category: 'Shorts', audience: 'meninos', size: '4 - 10', name: 'Bermuda jeans teen', price: 'R$ 169,99', color: 'photo-blue', image: 'imagens/meninos/shorts/bermuda-jeans-teen.png' },
+      { category: 'Blusas de frio', audience: 'bebe-menino', size: 'P, M, G, 1, 2, 3', name: 'Blusão Em Tricot Para Bebê Bordado Cavalinho Bege', price: 'R$ 143,94', color: 'photo-blue', image: 'imagens/bebe-menino/blusa-de-frio/46740-161336-1.webp' },
+      { category: 'Body de calor', audience: 'bebe-menino', size: 'RN, P, M, G, GG', name: 'Body menino em Suedine Premium com Botões', price: 'R$ 99,90', color: 'photo-blue', image: 'imagens/bebe-menino/body-de-calor/47071-193921.webp' },
+      { category: 'Body de frio', audience: 'bebe-menino', size: 'RN, P, M, G, GG', name: 'Body camisa Xadrez', price: 'R$ 134,94', color: 'photo-blue', image: 'imagens/bebe-menino/body-de-frio/46738-180426.webp' },
+      { category: 'Calças', audience: 'bebe-menino', size: '1, 2, 3, 4, 5', name: 'Calça de Sarja Infantil com cinto azul', price: 'R$ 99,99', color: 'photo-blue', image: 'imagens/bebe-menino/calcas/foto-0.webp' },
+      { category: 'Camisetas', audience: 'bebe-menino', size: 'P, M, G', name: 'Camiseta Listrada', price: 'R$ 65,00', color: 'photo-blue', image: 'imagens/bebe-menino/camisetas/3.webp' },
+      { category: 'Macacões de calor', audience: 'bebe-menino', size: 'PR, RN, P, M, G', name: 'Macaquinho Comfy para Bebê Menino com Botões de Pressão Entrepernas', price: 'R$ 159,90', color: 'photo-blue', image: 'imagens/bebe-menino/macacoes-de-calor/47015-dig398-1.webp' },
+      { category: 'Macacões de frio', audience: 'bebe-menino', size: 'PR, RN, P, M, G, 1, 2, 3', name: 'Macacão Essentials em Suedine para Bebê Menino', price: 'R$ 159,90', color: 'photo-blue', image: 'imagens/bebe-menino/macacoes-de-frio/47038-ab2520.webp' },
+      { category: 'Mijão', audience: 'bebe-menino', size: 'PR, RN, P, M, G', name: 'Calça para bebê menino em Suedine Essentials Off White', price: 'R$ 35,94', color: 'photo-blue', image: 'imagens/bebe-menino/mijao/46487-ab2377.webp' },
+      { category: 'Short tapa fralda', audience: 'bebe-menino', size: 'P, M, G, 1, 2, 3', name: 'Bermuda bebê menino em Moletom com bolsos', price: 'R$ 84,90', color: 'photo-blue', image: 'imagens/bebe-menino/short-tapa-fralda/47069-185841.webp' },
+      { category: 'Vestidos', size: '16 - 18', name: 'Vestidos', price: 'R$ [A DEFINIR]', color: 'photo-coral', image: 'imagens/bebe-menina/vestido/46402-191763-1.webp' },
+      { category: 'Conjuntos de calor', size: 'Recém nascido', name: 'Conjuntos de calor', price: 'R$ [A DEFINIR]', color: 'photo-blue', girlsImage: 'imagens/meninas/conjuntos-de-calor/36624-0945-0001.webp', meninosImage: 'imagens/meninos/conjuntos-de-calor/36821-1777-0005.webp' },
+      { category: 'Conjuntos de frio', size: 'P, M, G', name: 'Conjuntos de frio', price: 'R$ [A DEFINIR]', color: 'photo-yellow', girlsImage: 'imagens/meninas/conjuntos-de-frio/56425-1211-0002.webp', meninosImage: 'imagens/meninos/conjuntos-de-frio/56368-0028-0002.webp' },
+      { category: 'Shorts', size: '1 - 3', name: 'Shorts', price: 'R$ [A DEFINIR]', color: 'photo-coral', girlsImage: 'imagens/meninas/shorts/27255-1772-0002.webp', meninosImage: 'imagens/meninos/shorts/26963-3320-0002.webp' },
+      { category: 'Bolsas', size: '4 - 8', name: 'Bolsas', price: 'R$ [A DEFINIR]', color: 'photo-blue' },
+      { category: 'Bonés', size: '10 - 14', name: 'Bonés', price: 'R$ [A DEFINIR]', color: 'photo-yellow' },
+      { category: 'Calçados', audience: 'meninos', size: '28 - 37', name: 'Chinelo Infantil Bibi Sandals Sport', price: 'R$ 69,90', color: 'photo-blue', image: 'imagens/calcados/meninos/chinelo-bibi-sandals-sport.png' },
+      { category: 'Calçados', audience: 'meninos', size: '28 - 37', name: 'Sandália Infantil', price: 'R$ 74,90', color: 'photo-blue', image: 'imagens/calcados/meninos/sandalia-azul-marinho.png' },
+      { category: 'Calçados', audience: 'meninos', size: '28 - 37', name: 'Chuteira Infantil', price: 'R$ 89,90', color: 'photo-blue', image: 'imagens/calcados/meninos/chuteira-preta-prata.png' },
+      { category: 'Calçados', audience: 'meninos', size: '25 - 37', name: 'Tênis Infantil', price: 'R$ 94,90', color: 'photo-blue', image: 'imagens/calcados/meninos/tenis-azul-marinho-preto.png' },
+      { category: 'Calçados', audience: 'meninas', size: '28 - 37', name: 'Sandália Infantil', price: 'R$ 79,90', color: 'photo-coral', image: 'imagens/calcados/meninas/sandalia-branca-perolizada.png' },
+      { category: 'Calçados', audience: 'meninas', size: '20 - 35', name: 'Sapatilha Infantil', price: 'R$ 84,90', color: 'photo-coral', image: 'imagens/calcados/meninas/sapatilha-ballerina-dourada.png' },
+      { category: 'Calçados', audience: 'meninas', size: '28 - 37', name: 'Bota Infantil', price: 'R$ 119,90', color: 'photo-coral', image: 'imagens/calcados/meninas/bota-preta.png' },
+      { category: 'Calçados', audience: 'meninas', size: '30 - 37', name: 'Tênis de Rodinhas com LED Infantil', price: 'R$ 149,90', color: 'photo-coral', image: 'imagens/calcados/meninas/tenis-rodinhas-led-rosa.jpeg' },
+      { category: 'Meias', size: '15 - 38', name: 'Meias do desenho Bluey', price: 'R$ 14,99 cada', color: 'photo-coral', images: ['imagens/acessorios/meias/foto-0.webp'] },
+      { category: 'Meias', size: '15 - 38', name: 'Kit de 3 meias infantis cano longo Puma lilás', price: 'R$ 39,99', color: 'photo-coral', images: ['imagens/acessorios/meias/foto-0-1.webp'] },
+      { category: 'Meias', size: '0 - 12 meses', name: 'Meias infantis cano médio com antiderrapante', price: 'R$ 19,99 cada', color: 'photo-coral', images: ['imagens/acessorios/meias/foto-0-2.webp'] },
+      { category: 'Meias', size: '15 - 38', name: 'Meias Básicas', price: 'R$ 14,99 cada', color: 'photo-coral', images: ['imagens/acessorios/meias/foto-0-3.webp'] },
+      { category: 'Meias', size: '15 - 38', name: 'Kit de 3 meias infantis cano longo Puma azul', price: 'R$ 39,99', color: 'photo-coral', images: ['imagens/acessorios/meias/foto-0-4.webp'] },
+      { category: 'Meias', size: '15 - 38', name: 'Meias infantis Spider Man cano médio colorido', price: 'R$ 14,99 cada', color: 'photo-coral', images: ['imagens/acessorios/meias/kit-de-4-pares-de-meias-infantis-spider-man-cano-medio-colorido-1049209-colorido-1.webp'] },
+      { category: 'Pijamas', size: 'Recém nascido', name: 'Pijamas', price: 'R$ [A DEFINIR]', color: 'photo-blue' },
+      { category: 'Tiaras', size: 'Único', name: 'Tiara Arco Íris Brilha no Escuro', price: 'R$ 14,99', color: 'photo-yellow', images: ['imagens/acessorios/tiaras/brilha11-a4b5c030b3314d0ad816352591051035-1024-1024.webp'] },
+      { category: 'Tiaras', size: 'Único', name: 'Tiara Veludo Vermelho', price: 'R$ 14,99', color: 'photo-yellow', images: ['imagens/acessorios/tiaras/gemini-generated-image-nt9h8tnt9h8tnt9h-cbd32bf9cc0375d6ca17877509379724-1024-1024.webp'] },
+      { category: 'Tiaras', size: 'Único', name: 'Tiara Constelação', price: 'R$ 14,99', color: 'photo-yellow', images: ['imagens/acessorios/tiaras/gemini-generated-image-umjpotumjpotumjp-588193f301f0ce267017869852718716-1024-1024.webp'] },
+      { category: 'Tiaras', size: 'Único', name: 'Tiara Unicórnio Pompom Candy com Pisca Pisca', price: 'R$ 14,99', color: 'photo-yellow', images: ['imagens/acessorios/tiaras/tiara-unicornio-com-pisca-pisca21-ae612fb9800373232616772417734132-1024-1024.webp'] },
+      { category: 'Tiaras', size: 'Único', name: 'Tiara Borboleta Jardim', price: 'R$ 14,99', color: 'photo-yellow', images: ['imagens/acessorios/tiaras/tiaraborboletajardim1-5c0e581aa3a558843016629851965060-1024-1024.webp'] },
+      { category: 'Chupetas', size: 'Tamanho 1', name: 'Chupeta Confort Buba', price: 'R$ 14,99', color: 'photo-coral', images: ['imagens/acessorios/chupetas/21116-chupeta-buba-comfort-tam-1-noturna-nuvem-azul-01-detalhe04.webp'] },
+      { category: 'Chupetas', size: 'Tamanho 2', name: 'Chupeta Confort Buba', price: 'R$ 14,99', color: 'photo-coral', images: ['imagens/acessorios/chupetas/22387-chupeta-buba-comfort-tam-2-magic-arco-iris-01-detalhe04.webp'] },
+      { category: 'Laços', size: 'Único', name: 'Laço Glam Rosa', price: 'R$ 14,99', color: 'photo-yellow', images: ['imagens/acessorios/lacos/8ecc304f8967115e735da736c98ca42bawsaccesskeyidakiatclmsgfx4j7tu445expires1704476329signatureuddex5n89ntqyrf6oc0aeggq2f2b83d-7ff74b282bbf49497917018844226004-1024-1024.webp'] },
+      { category: 'Laços', size: 'Único', name: 'Laço Maria Flor Preto e Branco', price: 'R$ 15,99', color: 'photo-yellow', images: ['imagens/acessorios/lacos/gemini-generated-image-q2fof3q2fof3q2fo-377d3c807400e2f6d317860387588843-1024-1024.webp'] },
+      { category: 'Laços', size: 'Único', name: 'Laço de Couro Marrom', price: 'R$ 11,99', color: 'photo-yellow', images: ['imagens/acessorios/lacos/gemini-generated-image-q62pohq62pohq62p-361d93f32ae76023f817872357636982-1024-1024.webp'] },
+      { category: 'Laços', size: 'Único', name: 'Laço Mundo Mágico da Gabby', price: 'R$ 19,99', color: 'photo-yellow', images: ['imagens/acessorios/lacos/lacoluxogabby1-2906c10b048387115e16679120213319-1024-1024.webp'] },
+      { category: 'Mamadeiras', size: 'Kit 3', name: 'Mamadeira Easy Flow Anticólica - Kit 3 Brancas', price: 'R$ 39,99', color: 'photo-blue', images: ['imagens/acessorios/mamadeira/20990-kit-3-mamadeiras-easy-flow-nuvem-branca-120-270-330ml-03-embalagem01.webp'] },
+      { category: 'Mamadeiras', size: 'Único', name: 'Copo com Alça Removível - Azul', price: 'R$ 14,99', color: 'photo-blue', images: ['imagens/acessorios/mamadeira/22342-copo-com-alca-removivel-azul-03-embalagem.webp'] },
+      { category: 'Mamadeiras', size: 'Único', name: 'Copo com Alça Removível - Rosa', price: 'R$ 14,99', color: 'photo-coral', images: ['imagens/acessorios/mamadeira/22343-copo-com-alca-removivel-rosa-01-detalhe03.webp'] },
+      { category: 'Meia calça', size: '2 - 10', name: 'Meia-calça preta', price: 'R$ 29,99', color: 'photo-coral', images: ['imagens/acessorios/meia-calca/6638801-1200-auto.webp'] },
+      { category: 'Meia calça', size: '2 - 10', name: 'Meia-calça branca', price: 'R$ 19,99', color: 'photo-coral', images: ['imagens/acessorios/meia-calca/6675498-1200-auto.png'] },
+      { category: 'Suspensórios', size: 'Único', name: 'Kit Suspensório + Gravata Borboleta Infantil', price: 'R$ [A DEFINIR]', color: 'photo-blue', images: ['imagens/acessorios/suspensorios/d-nq-np-2x-669825-mla114662357219-072026-f.webp'] },
+      { category: 'Suspensórios', size: 'Único', name: 'Kit Suspensório + Gravata Borboleta Infantil', price: 'R$ [A DEFINIR]', color: 'photo-blue', images: ['imagens/acessorios/suspensorios/d-nq-np-2x-897775-mla105452258143-012026-f-kit-gravata-e-suspensorio-infantil-varias-cores.webp'] }
+    ];
+
+    const lancamentos = [
+      { category: 'Lançamentos', size: 'P, M, G', name: 'Bodys em destaque', price: 'R$ [A DEFINIR]', color: 'photo-coral' },
+      { category: 'Lançamentos', size: '1 - 3', name: 'Macacão novo', price: 'R$ [A DEFINIR]', color: 'photo-blue' },
+      { category: 'Lançamentos', size: '4 - 8', name: 'Coleção infantil', price: 'R$ [A DEFINIR]', color: 'photo-yellow' },
+      { category: 'Lançamentos', size: '10 - 14', name: 'Conjuntos premium', price: 'R$ [A DEFINIR]', color: 'photo-coral' }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const selectedCategory = params.get('categoria');
+    const selectedSize = params.get('tamanho');
+    const selectedPrice = params.get('preco');
+    const selectedAudience = params.get('publico');
+    const selectedSearch = (params.get('busca') || '').trim();
+
+    let products = [];
+    let title = 'Produtos';
+    let description = 'Confira os produtos disponíveis.';
+
+    function matchesPriceRange(product) {
+      const priceMatch = String(product.price || '').match(/R\$\s*([\d.]+,\d{2})/i);
+      if (!priceMatch) return false;
+
+      const priceValue = Number(priceMatch[1].replace(/\./g, '').replace(',', '.'));
+      if (!Number.isFinite(priceValue)) return false;
+
+      if (selectedPrice === 'ate-30') return priceValue <= 30;
+      if (selectedPrice === 'ate-50') return priceValue <= 50;
+      if (selectedPrice === 'ate-80') return priceValue <= 80;
+      if (selectedPrice === 'ate-100') return priceValue <= 100;
+      if (selectedPrice === 'mais-100') return priceValue > 100;
+      return false;
+    }
+
+    function matchesSelectedSize(product) {
+      if (product.name === product.category) {
+        return false;
+      }
+
+      const productSizes = String(product.size || '').toLowerCase().split(',').map(function (size) {
+        return size.trim();
+      });
+
+      if (selectedSize === 'Recém nascido') {
+        return productSizes.includes('rn');
+      }
+
+      if (selectedSize === 'P, M, G') {
+        return ['p', 'm', 'g'].every(function (size) {
+          return productSizes.includes(size);
+        });
+      }
+
+      const selectedRange = String(selectedSize).match(/^(\d+)\s*-\s*(\d+)$/);
+      if (selectedRange) {
+        const selectedMinimum = Number(selectedRange[1]);
+        const selectedMaximum = Number(selectedRange[2]);
+        return productSizes.some(function (size) {
+          const productRange = size.match(/^(\d+)\s*-\s*(\d+)$/);
+          if (productRange) {
+            return Number(productRange[1]) <= selectedMaximum && Number(productRange[2]) >= selectedMinimum;
+          }
+          const productSize = Number(size);
+          return Number.isInteger(productSize) && productSize >= selectedMinimum && productSize <= selectedMaximum;
+        });
+      }
+
+      return productSizes.includes(String(selectedSize).toLowerCase());
+    }
+
+    function normalizeSearchText(value) {
+      return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
+    if (selectedSearch) {
+      const searchTerm = normalizeSearchText(selectedSearch);
+      products = catalog.filter(function (product) {
+        return product.name !== product.category &&
+          (normalizeSearchText(product.name).includes(searchTerm) || normalizeSearchText(product.category).includes(searchTerm));
+      });
+      title = 'Resultados da busca';
+      description = 'Produtos encontrados para “' + selectedSearch + '”.';
+    } else if (selectedCategory) {
+      if (selectedCategory === 'Lançamentos') {
+        products = lancamentos;
+      } else {
+        products = catalog.filter(function (product) {
+          return product.category === selectedCategory && (!selectedAudience || (
+            product.audience === selectedAudience &&
+            (product.name !== product.category || !catalog.some(function (audienceProduct) {
+              return audienceProduct.category === selectedCategory && audienceProduct.audience === selectedAudience && audienceProduct.name !== selectedCategory;
+            })
+          ) || (!product.audience && !catalog.some(function (audienceProduct) {
+            return audienceProduct.category === selectedCategory && audienceProduct.audience === selectedAudience;
+          }))));
+        });
+      }
+      title = selectedCategory;
+      description = 'Produtos disponíveis em ' + selectedCategory + '.';
+    } else if (selectedSize) {
+      products = catalog.filter(function (product) {
+        return matchesSelectedSize(product);
+      });
+      title = selectedSize;
+      description = 'Produtos disponíveis no tamanho ' + selectedSize + '.';
+    } else if (selectedPrice) {
+      products = catalog.filter(matchesPriceRange);
+      title = selectedPrice === 'mais-100' ? 'Mais de R$ 100,00' : 'Até R$ ' + selectedPrice.replace('ate-', '') + ',00';
+      description = 'Produtos disponíveis na faixa de preço ' + title + '.';
+    } else {
+      products = catalog;
+      title = 'Produtos';
+      description = 'Confira os produtos disponíveis.';
+    }
+
+    document.getElementById('titulo-categoria').textContent = title;
+    document.getElementById('descricao-categoria').textContent = description;
+
+    const container = document.getElementById('category-products');
+    container.innerHTML = products.map(function (product) {
+      const hasAudienceImages = ['Blusas de frio', 'Body de calor', 'Body de frio', 'Calças', 'Camisetas', 'Macacões de calor', 'Macacões de frio', 'Mijão', 'Short tapa fralda', 'Conjuntos de calor', 'Conjuntos de frio', 'Shorts', 'Chupetas', 'Laços', 'Mamadeiras', 'Meia calça', 'Meias', 'Suspensórios', 'Tiaras'].includes(product.category);
+      const selectedImage = product.audience
+        ? product.images || product.image || ''
+        : selectedAudience && hasAudienceImages
+        ? selectedAudience === 'bebe-menina' ? product.image || '' : selectedAudience === 'bebe-menino' ? product.boyImage || '' : selectedAudience === 'meninas' ? product.girlsImage || '' : selectedAudience === 'meninos' ? product.meninosImage || '' : selectedAudience === 'acessorios' ? product.images || '' : ''
+        : product.images || (product.image ? product.image : '');
+      const productImages = Array.isArray(selectedImage) ? selectedImage : [selectedImage];
+      return productImages.map(function (image) {
+        const productAudience = selectedAudience || product.audience;
+        const productLink = 'produto.html?categoria=' + encodeURIComponent(product.category) + '&nome=' + encodeURIComponent(product.name) + (productAudience ? '&publico=' + encodeURIComponent(productAudience) : '') + '&imagem=' + encodeURIComponent(image || 'none');
+        return `
+        <article class="product-card">
+          <a href="${productLink}" class="product-photo-link" aria-label="Abrir detalhes de ${product.name}">
+            <div class="product-photo ${product.color}" aria-label="${product.name}">${image ? '<img src="' + image + '" alt="' + product.name + '">' : ''}</div>
+          </a>
+          <div class="product-info">
+            <p class="product-category">${product.category}</p>
+            <h2>${product.name}</h2>
+            <p class="price">${product.price}</p>
+            <a href="${productLink}">Ver produto <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      `;
+      }).join('');
+    }).join('');
+
+    function showNoSearchResults() {
+      if (!selectedSearch || container.querySelector('.product-card')) return;
+      const message = document.createElement('p');
+      message.className = 'search-empty';
+      message.textContent = 'Não encontramos produtos para “' + selectedSearch + '”. Tente outro nome ou categoria.';
+      container.appendChild(message);
+    }
+
+    showNoSearchResults();
+
+    if (selectedSize || selectedPrice || selectedSearch) {
+      container.querySelectorAll('.product-card').forEach(function (card) {
+        const image = card.querySelector('.product-photo img');
+        if (!image || image.complete && image.naturalWidth === 0) {
+          card.remove();
+          showNoSearchResults();
+          return;
+        }
+        image.addEventListener('error', function () {
+          card.remove();
+          showNoSearchResults();
+        }, { once: true });
+      });
+    }
+  </script>
+</body>
+</html>
